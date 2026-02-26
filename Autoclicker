@@ -1,0 +1,26 @@
+from pynput.mouse import Button, Controller
+from pynput import mouse
+import time
+import threading
+
+mouse_controller = Controller()
+clicking = False
+
+def click_loop():
+    while clicking:
+        mouse_controller.click(Button.left)
+        time.sleep(0.003) #adjusting speed of clicking
+
+def on_click(x, y, button, pressed):
+    global clicking
+
+    if button == mouse.Button.x2:
+        if pressed:
+            clicking = True
+            threading.Thread(target=click_loop, daemon=True).start()
+        else:
+            clicking = False
+
+with mouse.Listener(on_click=on_click) as listener:
+    listener.join()
+
