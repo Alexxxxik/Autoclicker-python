@@ -9,7 +9,7 @@ clicking = False
 def click_loop():
     while clicking:
         mouse_controller.click(Button.left)
-        time.sleep(0.003) #adjusting speed of clicking
+        time.sleep(0.001) #adjusting speed of clicking
 
 def on_click(x, y, button, pressed):
     global clicking
