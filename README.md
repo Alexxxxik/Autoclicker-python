@@ -30,3 +30,5 @@ on_click()	Callback-functie die geactiveerd wordt wanneer er op een muisknop wor
 mouse.Listener	Luistert naar muisgebeurtenissen
 Aanpassingen
 Kliksnelheid wijzigen: Verander time.sleep(0.003) naar een ander getal (in seconden). Lager = sneller klikken.
+
+time sleep getallen = 0.001 = 100 kliks per seconden , 0,003 = 333 kliks per seconden
